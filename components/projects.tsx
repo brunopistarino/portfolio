@@ -24,7 +24,7 @@ const projects = [
     stack: ["NextJS", "TailwindCSS"],
   },
   {
-    name: "numatch matching game",
+    name: "numatch juego de memoria",
     image: "/project-numatch.png",
     url: "https://numatch.vercel.app/",
     stack: ["Vite", "SASS"],

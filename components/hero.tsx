@@ -6,19 +6,10 @@ import { useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
-  // const nameRef = useRef();
-  // gsap.registerPlugin(ScrollTrigger);
-
-  // gsap.to(".aaa", {
-  //   scrollTrigger: ".aaa", // start animation when ".box" enters the viewport
-  //   x: 500,
-  // });
-
   return (
-    <section className="lg:min-h-screen p-5 lg:p-12 flex justify-between flex-col items-end">
+    <section className="min-h-[500px] lg:min-h-screen p-5 lg:p-12 flex justify-between flex-col items-end">
       <p className="text-5xl lg:text-7xl">FULL-STACK DEVELOPER</p>
       <Name />
-      {/* <AnimatedObject /> */}
     </section>
   );
 }
@@ -41,7 +32,9 @@ const Name = () => {
       gsap.to(b, {
         scrollTrigger: {
           trigger: b,
-          start: "top 10%", // Puedes ajustar el punto de inicio según tus necesidades
+          start: () => (window.innerWidth < 650 ? "top 350" : "top 10%"),
+
+          // start: "top 10%", // Puedes ajustar el punto de inicio según tus necesidades
           // end: "bottom center", // Puedes ajustar el punto de fin según tus necesidades
           end: "+=600",
           scrub: 1, // Activa el efecto "scrubbing" para un desplazamiento suave
@@ -56,7 +49,7 @@ const Name = () => {
       gsap.to(r, {
         scrollTrigger: {
           trigger: r,
-          start: "top 10%",
+          start: () => (window.innerWidth < 650 ? "top 350" : "top 10%"),
           end: "+=600",
           scrub: 1,
         },
@@ -69,7 +62,7 @@ const Name = () => {
       gsap.to(u, {
         scrollTrigger: {
           trigger: u,
-          start: "top 10%",
+          start: () => (window.innerWidth < 650 ? "top 350" : "top 10%"),
           end: "+=600",
           scrub: 1,
         },
@@ -82,7 +75,7 @@ const Name = () => {
       gsap.to(n, {
         scrollTrigger: {
           trigger: n,
-          start: "top 10%",
+          start: () => (window.innerWidth < 650 ? "top 350" : "top 10%"),
           end: "+=600",
           scrub: 1,
         },
@@ -95,7 +88,7 @@ const Name = () => {
       gsap.to(o, {
         scrollTrigger: {
           trigger: o,
-          start: "top 10%",
+          start: () => (window.innerWidth < 650 ? "top 350" : "top 10%"),
           end: "+=600",
           scrub: 1,
         },
@@ -113,12 +106,8 @@ const Name = () => {
 
   return (
     <svg
-      className="overflow-visible"
-      // className="w-full"
-      // width="1366"
+      className="overflow-visible overflow-x-visible overflow-y-visible"
       width="100%"
-      // height="268"
-      // height="100%"
       viewBox="0 0 1366 268"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -149,43 +138,5 @@ const Name = () => {
         ref={oRef}
       />
     </svg>
-  );
-};
-
-const AnimatedObject: React.FC = () => {
-  const objectRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const object = objectRef.current;
-
-    if (object) {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: object,
-          start: "top center", // Puedes ajustar el punto de inicio según tus necesidades
-          // end: "bottom center", // Puedes ajustar el punto de fin según tus necesidades
-          end: "+=400",
-          scrub: 1, // Activa el efecto "scrubbing" para un desplazamiento suave
-          markers: true, // Activa los marcadores de ScrollTrigger
-        },
-      });
-
-      tl.to(object, { x: 400, duration: 1 });
-
-      return () => {
-        // Limpia la animación y ScrollTrigger al desmontar el componente
-        tl.kill();
-        // ScrollTrigger.kill();
-      };
-    }
-  }, []);
-
-  return (
-    <div
-      ref={objectRef}
-      style={{ width: "50px", height: "50px", background: "blue" }}
-    >
-      {/* Contenido del objeto */}
-    </div>
   );
 };
