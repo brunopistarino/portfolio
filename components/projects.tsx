@@ -1,18 +1,19 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const projects = [
   {
     name: "InClass iOS APP",
     image: "",
-    url: "",
+    url: "https://apps.apple.com/us/app/inclass-school-planner/id6462791378",
     stack: ["Swift", "Xcode", "RevenueCat"],
   },
   {
     name: "InClass Landing Page",
     image: "",
-    url: "",
+    url: "https://inclass.ar/",
     stack: ["NextJS", "TailwindCSS"],
   },
   //   {
@@ -23,13 +24,13 @@ const projects = [
   {
     name: "Distri-Raf",
     image: "",
-    url: "",
+    url: "https://www.distriraf.com.ar/",
     stack: ["NextJS", "TypeScript", "TailwindCSS", "Supabase"],
   },
   {
     name: "numatch",
     image: "",
-    url: "",
+    url: "https://numatch.vercel.app/",
     stack: ["Vite", "SASS"],
   },
 ];
@@ -37,23 +38,26 @@ const projects = [
 export default function Projects() {
   const [item, setItem] = useState(projects[0]);
   return (
-    <section className="mb-24 mt-64 px-12 flex flex-col gap-24">
+    <section className="mb-24 mt-32 md:mt-64 px-5 md:px-12 flex flex-col gap-12 md:gap-24">
       <p className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl">
         MIS PROYECTOS
       </p>
-      <div className="grid grid-cols-[4fr_2fr] gap-16">
-        <div className="grid grid-cols-2 gap-4">
+      <div className="grid lg:grid-cols-[4fr_2fr] gap-16">
+        <div className="grid sm:grid-cols-2 gap-4">
           {projects.map((item, x) => (
-            <div
+            <Link
               key={x}
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-black aspect-square rounded-lg flex items-center justify-center"
               onMouseOver={() => setItem(item)}
             >
               <p>{item.name}</p>
-            </div>
+            </Link>
           ))}
         </div>
-        <div>
+        <div className="hidden lg:block">
           <div className="sticky top-8 flex flex-col gap-4">
             <p className="text-5xl">{item.name}</p>
             <div className="flex gap-4 flex-wrap">

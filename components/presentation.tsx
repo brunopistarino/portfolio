@@ -19,8 +19,8 @@ const techStack = [
 export default function Presentation() {
   return (
     <section className="px-5 lg:px-12">
-      <div className="rounded-lg p-24 grid lg:grid-cols-2 backdrop-blur-[100px] bg-[#373737]/[0.4]">
-        <div className="flex flex-col gap-2">
+      <div className="rounded-lg p-6 md:p-24 grid lg:grid-cols-2 backdrop-blur-[100px] bg-[#373737]/[0.4]">
+        <div className="flex-col gap-2 hidden md:flex">
           <Image
             src="/profile.jpg"
             alt=""
@@ -31,8 +31,8 @@ export default function Presentation() {
           <p className="text-2xl">Bruno Pistarino</p>
           {/* <div className="bg-white rounded-lg h-96 w-72"></div> */}
         </div>
-        <div className="flex flex-col gap-16 max-w-2xl">
-          <div className="flex flex-col gap-12 text-2xl">
+        <div className="flex flex-col gap-8 md:gap-16 max-w-2xl">
+          <div className="flex flex-col gap-6 md:gap-12 text-lg md:text-2xl">
             <p>
               Estudio Ingeniería en Informática y me apasiona crear interfaces
               que resalten por su experiencia de usuario (UX). Soy una persona
@@ -47,11 +47,11 @@ export default function Presentation() {
               ecosistema Apple.
             </p>
           </div>
-          <div className="flex flex-col gap-4">
-            <p className="text-2xl">Tech Stack</p>
-            <div className="grid grid-cols-3 gap-2">
+          <div className="flex flex-col gap-2 md:gap-4">
+            <p className="text-lg md:text-2xl">Tech Stack</p>
+            <div className="grid grid-cols-3 gap-1 md:gap-2">
               {techStack.map((item, x) => (
-                <p key={x} className="text-base">
+                <p key={x} className="text-sm md:text-base">
                   {item}
                 </p>
               ))}

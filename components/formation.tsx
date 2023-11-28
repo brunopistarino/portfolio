@@ -116,7 +116,7 @@ export default function Formation() {
         className={clsx(
           "absolute w-80 flair aspect-video object-cover rounded-lg",
           {
-            hidden: image === "",
+            hidden: image === "" || window.innerWidth <= 767,
             "border-2": image === "/GOOGLEUX.jpg",
           }
         )}
