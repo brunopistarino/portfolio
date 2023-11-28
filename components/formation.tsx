@@ -113,9 +113,13 @@ export default function Formation() {
         src={image ?? ""}
         alt=""
         ref={imgRef}
-        className={clsx("absolute w-80 flair aspect-video object-cover", {
-          hidden: image === "",
-        })}
+        className={clsx(
+          "absolute w-80 flair aspect-video object-cover rounded-lg",
+          {
+            hidden: image === "",
+            "border-2": image === "/GOOGLEUX.jpg",
+          }
+        )}
       />
     </section>
   );

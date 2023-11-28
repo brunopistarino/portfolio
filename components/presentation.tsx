@@ -20,7 +20,7 @@ export default function Presentation() {
   return (
     <section className="px-5 lg:px-12">
       <div className="rounded-lg p-24 grid lg:grid-cols-2 backdrop-blur-[100px] bg-[#373737]/[0.4]">
-        <div>
+        <div className="flex flex-col gap-2">
           <Image
             src="/profile.jpg"
             alt=""
@@ -28,7 +28,7 @@ export default function Presentation() {
             height={904}
             className="sm:max-w-xs rounded-lg"
           />
-          <p>Bruno Pistarino</p>
+          <p className="text-2xl">Bruno Pistarino</p>
           {/* <div className="bg-white rounded-lg h-96 w-72"></div> */}
         </div>
         <div className="flex flex-col gap-16 max-w-2xl">

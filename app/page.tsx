@@ -13,3 +13,5 @@ export default function Home() {
     </main>
   );
 }
+
+// TODO: agregar una página individual para cada proyecto
