@@ -33,7 +33,9 @@ const projects = [
 export default function Projects() {
   return (
     <section className="p-12">
-      <p className="text-8xl">MIS PROYECTOS</p>
+      <p className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl">
+        MIS PROYECTOS
+      </p>
       <div className="grid grid-cols-2">
         <div className="grid grid-cols-2 gap-4">
           {projects.map((item, x) => (

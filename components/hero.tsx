@@ -15,8 +15,8 @@ export default function Hero() {
   // });
 
   return (
-    <section className="min-h-screen p-12 flex justify-between flex-col items-end">
-      <p className="text-7xl">FULL-STACK DEVELOPER</p>
+    <section className="lg:min-h-screen p-5 lg:p-12 flex justify-between flex-col items-end">
+      <p className="text-5xl lg:text-7xl">FULL-STACK DEVELOPER</p>
       <Name />
       {/* <AnimatedObject /> */}
     </section>
@@ -43,62 +43,66 @@ const Name = () => {
           trigger: b,
           start: "top 10%", // Puedes ajustar el punto de inicio según tus necesidades
           // end: "bottom center", // Puedes ajustar el punto de fin según tus necesidades
-          end: "+=400",
+          end: "+=600",
           scrub: 1, // Activa el efecto "scrubbing" para un desplazamiento suave
           markers: true, // Activa los marcadores de ScrollTrigger
         },
-        y: 400,
+        y: 600,
         x: -100,
         rotation: -10,
-        duration: 1,
+        duration: 0.5,
       });
 
       gsap.to(r, {
         scrollTrigger: {
           trigger: r,
           start: "top 10%",
+          end: "+=600",
           scrub: 1,
         },
-        y: 200,
+        y: 400,
         x: -80,
         rotation: -5,
-        duration: 1,
+        duration: 0.5,
       });
 
       gsap.to(u, {
         scrollTrigger: {
           trigger: u,
           start: "top 10%",
+          end: "+=600",
           scrub: 1,
         },
-        y: 400,
+        y: 600,
         x: 20,
         rotation: 12,
-        duration: 1,
+        duration: 0.5,
       });
 
       gsap.to(n, {
         scrollTrigger: {
           trigger: n,
           start: "top 10%",
+          end: "+=600",
           scrub: 1,
         },
-        y: 600,
+        y: 800,
         x: 40,
         rotation: 2,
-        duration: 1,
+        duration: 0.5,
       });
 
       gsap.to(o, {
         scrollTrigger: {
           trigger: o,
           start: "top 10%",
+          end: "+=600",
           scrub: 1,
         },
-        y: 450,
+        y: 650,
         x: 120,
         rotation: 10,
-        duration: 1,
+        duration: 0.5,
       });
     }, [b, r, u, n, o]);
 

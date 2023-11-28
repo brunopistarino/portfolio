@@ -60,19 +60,23 @@ export default function Formation() {
   const [image, setImage] = useState("");
 
   return (
-    <section className="p-12 bg-white flex flex-col gap-52 text-[#141212]">
-      <p className="text-8xl">MI FORMACIÓN</p>
+    <section className="px-5 md:px-12 py-6 md:py-12 bg-white flex flex-col gap-20 lg:gap-52 text-[#141212]">
+      <p className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl">
+        MI FORMACIÓN
+      </p>
       <div className="border-b border-black">
         {fomation.map((item, x) => (
           <Link
-            className="grid grid-cols-[1fr_minmax(70px,_auto)] lg:grid-cols-[1fr_minmax(30%,_auto)_minmax(20%,_auto)] border-t border-black items-center py-3 group"
+            className="grid grid-cols-[1fr_minmax(100px,_auto)_minmax(70px,_auto)] lg:grid-cols-[1fr_minmax(30%,_auto)_minmax(20%,_auto)] border-t border-black items-center py-3 group"
             key={x}
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
             onMouseOver={() => setImage(item.image)}
           >
-            <p className="text-5xl group-hover:text-[#47B172]">{item.name}</p>
+            <p className="text-3xl lg:text-4xl xl:text-5xl group-hover:text-[#47B172]">
+              {item.name}
+            </p>
             <p className="text-base">{item.type}</p>
             <p className="text-base text-end">{item.year}</p>
           </Link>

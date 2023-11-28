@@ -12,13 +12,16 @@ const techStack = [
   "C",
   "GO",
   ".NET",
+  "Figma",
 ];
 
 export default function Presentation() {
   return (
-    <section className="px-12">
-      <div className="rounded-lg p-16 grid grid-cols-2 backdrop-blur-[100px] bg-[#373737]/[0.4]">
-        <p></p>
+    <section className="px-5 lg:px-12">
+      <div className="rounded-lg p-16 grid lg:grid-cols-2 backdrop-blur-[100px] bg-[#373737]/[0.4]">
+        <div>
+          <div className="bg-white rounded-lg h-96 w-72"></div>
+        </div>
         <div className="flex flex-col gap-8">
           <p className="text-2xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
