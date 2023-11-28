@@ -42,13 +42,13 @@ const fomation = [
     href: "https://grow.google/certificates/ux-design/",
     image: "/GOOGLEUX.jpg",
   },
-  {
-    name: "EETP460",
-    type: "Secundaria",
-    year: "2021",
-    href: "https://www.eet460rafaela.edu.ar/informatica",
-    image: "",
-  },
+  // {
+  //   name: "EETP460",
+  //   type: "Secundaria",
+  //   year: "2021",
+  //   href: "https://www.eet460rafaela.edu.ar/informatica",
+  //   image: "",
+  // },
   {
     name: "CS50W",
     type: "Curso",

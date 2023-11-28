@@ -2,37 +2,38 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 const projects = [
   {
     name: "InClass iOS APP",
-    image: "",
+    image: "/project-inclass.png",
     url: "https://apps.apple.com/us/app/inclass-school-planner/id6462791378",
     stack: ["Swift", "Xcode", "RevenueCat"],
   },
   {
+    name: "Distri-Raf eCommerce",
+    image: "/project-distriraf.png",
+    url: "https://www.distriraf.com.ar/",
+    stack: ["NextJS", "TypeScript", "TailwindCSS", "Supabase"],
+  },
+  {
     name: "InClass Landing Page",
-    image: "",
+    image: "/project-landing.png",
     url: "https://inclass.ar/",
     stack: ["NextJS", "TailwindCSS"],
+  },
+  {
+    name: "numatch matching game",
+    image: "/project-numatch.png",
+    url: "https://numatch.vercel.app/",
+    stack: ["Vite", "SASS"],
   },
   //   {
   //     name: "Fake Pain",
   //     image: "",
   //     url: "",
   //   },
-  {
-    name: "Distri-Raf",
-    image: "",
-    url: "https://www.distriraf.com.ar/",
-    stack: ["NextJS", "TypeScript", "TailwindCSS", "Supabase"],
-  },
-  {
-    name: "numatch",
-    image: "",
-    url: "https://numatch.vercel.app/",
-    stack: ["Vite", "SASS"],
-  },
 ];
 
 export default function Projects() {
@@ -50,10 +51,17 @@ export default function Projects() {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-black aspect-square rounded-lg flex items-center justify-center"
+              className="bg-white text-black aspect-square rounded-lg flex items-center justify-center overflow-hidden"
               onMouseOver={() => setItem(item)}
             >
-              <p>{item.name}</p>
+              <Image
+                src={item.image}
+                alt=""
+                width={1080}
+                height={1080}
+                className="hover:scale-105 transition-all"
+              />
+              {/* <p>{item.name}</p> */}
             </Link>
           ))}
         </div>
