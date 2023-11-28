@@ -32,7 +32,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="p-12">
+    <section className="mb-48 mt-32 px-12">
       <p className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl">
         MIS PROYECTOS
       </p>
