@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Formation from "@/components/formation";
 import Hero from "@/components/hero";
 import Presentation from "@/components/presentation";
@@ -10,6 +11,7 @@ export default function Home() {
       <Presentation />
       <Projects />
       <Formation />
+      <Footer />
     </main>
   );
 }

@@ -46,23 +46,26 @@ export default function Projects() {
       <div className="grid lg:grid-cols-[4fr_2fr] gap-16">
         <div className="grid sm:grid-cols-2 gap-4">
           {projects.map((item, x) => (
-            <Link
-              key={x}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-black aspect-square rounded-lg flex items-center justify-center overflow-hidden"
-              onMouseOver={() => setItem(item)}
-            >
-              <Image
-                src={item.image}
-                alt=""
-                width={1080}
-                height={1080}
-                className="hover:scale-105 transition-all"
-              />
-              {/* <p>{item.name}</p> */}
-            </Link>
+            <div key={x} className="group">
+              <Link
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-black aspect-square rounded-lg flex items-center justify-center overflow-hidden"
+                onMouseOver={() => setItem(item)}
+              >
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={1080}
+                  height={1080}
+                  className="hover:scale-105 transition-all"
+                />
+              </Link>
+              <p className="mt-2 mb-1 block lg:hidden group-hover:underline underline-offset-2 text-lg">
+                {item.name}
+              </p>
+            </div>
           ))}
         </div>
         <div className="hidden lg:block">
