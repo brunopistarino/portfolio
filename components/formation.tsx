@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import clsx from "clsx";
+gsap.registerPlugin(ScrollTrigger);
 
 const fomation = [
   {
@@ -59,10 +61,30 @@ const fomation = [
 ];
 
 export default function Formation() {
+  const bRef = useRef<SVGPathElement>(null);
   const [image, setImage] = useState("");
   const imgRef = useRef(null);
 
   useEffect(() => {
+    const b = bRef.current;
+
+    const ctx = gsap.context(() => {
+      gsap.set(b, { y: 50, opacity: 0 });
+      gsap.to(b, {
+        scrollTrigger: {
+          trigger: b,
+          toggleActions: "restart none none none",
+          // start: () => (window.innerWidth < 650 ? "top 350" : "top 10%"),
+          // end: "+=600",
+          // scrub: 1,
+          markers: true,
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+      });
+    });
+
     gsap.set(".flair", { xPercent: -10, yPercent: -160 });
 
     let xSetter = gsap.quickSetter(".flair", "x", "px"); //apply it to the #id element's x property and append a "px" unit
@@ -81,7 +103,7 @@ export default function Formation() {
     });
 
     return () => {
-      // ctx.revert();
+      ctx.revert();
     };
   }, []);
 
@@ -90,7 +112,11 @@ export default function Formation() {
       <p className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl">
         MI FORMACIÓN
       </p>
-      <div className="border-b border-black" onMouseLeave={() => setImage("")}>
+      <div
+        className="border-b border-black"
+        onMouseLeave={() => setImage("")}
+        ref={bRef}
+      >
         {fomation.map((item, x) => (
           <Link
             className="grid grid-cols-[1fr_minmax(100px,_auto)_minmax(70px,_auto)] lg:grid-cols-[1fr_minmax(30%,_auto)_minmax(20%,_auto)] border-t border-black items-center py-3 group"
