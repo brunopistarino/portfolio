@@ -33,12 +33,9 @@ const Name = () => {
         scrollTrigger: {
           trigger: b,
           start: () => (window.innerWidth < 650 ? "top 350" : "top 10%"),
-
-          // start: "top 10%", // Puedes ajustar el punto de inicio según tus necesidades
-          // end: "bottom center", // Puedes ajustar el punto de fin según tus necesidades
           end: "+=600",
-          scrub: 1, // Activa el efecto "scrubbing" para un desplazamiento suave
-          markers: true, // Activa los marcadores de ScrollTrigger
+          scrub: 1,
+          // markers: true,
         },
         y: 550,
         x: -100,

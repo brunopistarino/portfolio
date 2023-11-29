@@ -1,3 +1,5 @@
+"use client";
+
 import Footer from "@/components/footer";
 import Formation from "@/components/formation";
 import Hero from "@/components/hero";
