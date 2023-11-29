@@ -22,7 +22,7 @@ export default function Presentation() {
       <div className="rounded-lg p-6 md:p-24 grid lg:grid-cols-2 backdrop-blur-[100px] bg-[#373737]/[0.4] gap-8 md:gap-16">
         <div className="flex-col gap-2 flex lg:items-start items-center">
           <Image
-            src="/profile.jpg"
+            src="/profile.jpeg"
             alt=""
             width={685}
             height={904}

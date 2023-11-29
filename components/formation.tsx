@@ -78,12 +78,50 @@ export default function Formation() {
       });
       xSetter(e.x);
       ySetter(e.y);
+
+      // gsap.to(".flair", {
+      //   duration: 0.5,
+      //   overwrite: "auto",
+      //   x: e.clientX,
+      //   y: e.clientY,
+      //   stagger: 0.1,
+      //   ease: "none",
+      // });
     });
 
     return () => {
       // ctx.revert();
     };
   }, []);
+
+  // const followerRef = useRef(null);
+
+  // useEffect(() => {
+  //   const follower = followerRef.current;
+
+  //   const handleMouseMove = (event) => {
+  //     // Get the mouse coordinates
+  //     const mouseX = event.clientX;
+  //     const mouseY = event.clientY;
+
+  //     // Use GSAP to animate the follower with a delay
+  //     gsap.to(follower, {
+  //       duration: 0.5,
+  //       x: mouseX,
+  //       y: mouseY,
+  //       ease: "power2.out",
+  //       delay: 0.1, // Set your desired delay
+  //     });
+  //   };
+
+  //   // Attach the mouse move event listener
+  //   window.addEventListener("mousemove", handleMouseMove);
+
+  //   return () => {
+  //     // Remove the event listener when the component unmounts
+  //     window.removeEventListener("mousemove", handleMouseMove);
+  //   };
+  // }, []);
 
   return (
     <section className="px-5 md:px-12 py-6 md:py-12 bg-white flex flex-col gap-20 lg:gap-52 text-[#141212]">
@@ -113,6 +151,7 @@ export default function Formation() {
         src={image ?? ""}
         alt=""
         ref={imgRef}
+        // ref={followerRef}
         className={clsx(
           "absolute w-80 flair aspect-video object-cover rounded-lg",
           {
